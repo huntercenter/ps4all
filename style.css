@@ -1,0 +1,126 @@
+/* Hunter Center Libya — presentation layer only */
+* { box-sizing: border-box; }
+html { min-height: 100%; background: #030a07; }
+body {
+  min-height: 100vh;
+  margin: 0;
+  padding: clamp(18px, 4vw, 52px) 18px 24px;
+  color: #f4f9ff;
+  font-family: Arial, Helvetica, sans-serif;
+  text-align: center;
+  background:
+    linear-gradient(180deg, rgba(1,12,6,.70), rgba(1,12,6,.88)),
+    url("huntercenter_wallpaper.png") center center / cover fixed no-repeat,
+    #030a07;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.brand-header {
+  width: min(100%, 980px);
+  min-height: 112px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 22px;
+  padding: 14px 22px;
+  border: 1px solid rgba(55,255,112,.58);
+  border-radius: 18px;
+  background: linear-gradient(115deg, rgba(3,20,10,.94), rgba(5,55,22,.76));
+  box-shadow: 0 0 28px rgba(0,255,92,.22), inset 0 0 22px rgba(0,255,92,.08);
+}
+.brand-logo { width: 92px; height: 92px; object-fit: contain; border-radius: 12px; }
+.brand-copy { text-align: left; }
+.brand-name { color: #52ff78; font-size: clamp(22px, 4vw, 36px); font-weight: 900; letter-spacing: 2px; text-shadow: 0 0 16px rgba(0,255,92,.6); }
+.brand-subtitle { margin-top: 7px; color: #d9eaff; font-size: clamp(11px, 1.8vw, 15px); letter-spacing: 2.5px; font-weight: 700; }
+#msgs {
+  width: min(100%, 900px);
+  min-height: 150px;
+  margin: clamp(38px, 8vh, 90px) auto 0 !important;
+  padding: 34px 22px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid rgba(55,255,112,.8);
+  border-radius: 18px;
+  background: linear-gradient(135deg, rgba(2,18,8,.94), rgba(4,48,18,.88));
+  box-shadow: 0 0 34px rgba(0,255,92,.22), inset 0 0 22px rgba(0,255,92,.08);
+  color: #f5fbff;
+  font-size: clamp(20px, 3vw, 30px) !important;
+  line-height: 1.35;
+  text-shadow: 0 0 12px rgba(38,255,100,.3);
+  overflow-wrap: anywhere;
+}
+body > h1:not(#msgs) {
+  width: min(100%, 900px);
+  margin: 28px auto 0 !important;
+  padding: 16px;
+  color: #c7f5d0;
+  font-size: clamp(12px, 1.8vw, 16px) !important;
+  line-height: 1.8;
+  border-top: 1px solid rgba(55,255,112,.3);
+}
+body > h1 a { color: #55ff79 !important; text-decoration: none; }
+.site-footer {
+  margin-top: auto;
+  padding-top: 38px;
+  color: #9ac9a5;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: 2px;
+}
+.site-footer span { color: #55ff79; padding: 0 7px; }
+@media (max-width: 520px) {
+  body { padding: 12px 10px 18px; background-attachment: scroll; }
+  .brand-header { gap: 12px; padding: 12px; min-height: 90px; }
+  .brand-logo { width: 70px; height: 70px; }
+  .brand-name { letter-spacing: 1px; }
+  #msgs { min-height: 125px; margin-top: 34px !important; padding: 24px 14px; }
+}
+
+.brand-tagline {
+  margin-top: 9px;
+  color: #f1f7ff;
+  font-size: clamp(10px, 1.45vw, 13px);
+  line-height: 1.5;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.hunter-strength {
+  width: min(100%, 900px);
+  margin: 28px auto 0;
+  padding: 20px 16px;
+  border-top: 1px solid rgba(55,255,112,.42);
+  text-align: center;
+}
+.hunter-strength-title {
+  color: #55ff79;
+  font-size: clamp(20px, 3vw, 29px);
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-shadow: 0 0 16px rgba(0,255,92,.55);
+}
+.hunter-strength-line {
+  margin-top: 8px;
+  color: #eaf6ff;
+  font-size: clamp(13px, 2vw, 18px);
+  font-weight: 800;
+  letter-spacing: 1.5px;
+}
+.hunter-strength-detail {
+  margin-top: 7px;
+  color: #a8d6b0;
+  font-size: clamp(10px, 1.5vw, 13px);
+  font-weight: 600;
+  letter-spacing: .8px;
+  line-height: 1.5;
+}
+
+.contact-line {
+  margin-top: 7px;
+  color: #b9d9bf;
+  font-size: 10px;
+  letter-spacing: .7px;
+  line-height: 1.5;
+}
