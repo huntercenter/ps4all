@@ -1,0 +1,560 @@
+/* Hunter Center Libya brand layer - preserves the original WebKitty layout and behavior */
+html, body { min-height:100%; background:#020b05 !important; }
+body { color:#f3fff6 !important; background-image:linear-gradient(rgba(2,8,20,.88),rgba(2,8,20,.92)),url('../assets/huntercenter/huntercenter-wallpaper.jpg') !important; background-position:center center !important; background-size:cover !important; background-attachment:fixed !important; }
+.mainContainer { background:transparent !important; }
+#initial-screen { background:transparent !important; }
+.hc-brand-header { width:100%; max-width:900px; display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; margin:78px auto 22px auto; padding:12px 16px; box-sizing:border-box; }
+.hc-brand-logo { display:block; width:112px; height:auto; max-height:92px; object-fit:contain; margin:0 auto 8px auto; filter:drop-shadow(0 0 12px rgba(34,197,94,.45)); }
+.hc-brand-name { color:#fff; font-family:Arial,sans-serif; font-size:clamp(24px,4vw,38px); font-weight:900; letter-spacing:3px; text-shadow:0 0 12px rgba(34,197,94,.75); }
+.hc-brand-name span { color:#22c55e; }
+.hc-brand-tagline { margin-top:5px; color:#bbf7d0; font-family:Arial,sans-serif; font-size:12px; font-weight:bold; letter-spacing:1.5px; }
+button, select, input, a { accent-color:#16a34a; }
+button { border:1px solid rgba(34,197,94,.55) !important; }
+button:not(:disabled):hover { box-shadow:0 0 12px rgba(34,197,94,.35); }
+#initial-screen h2, #initial-screen h3, #exploit-main-screen h2, #exploit-main-screen h3 { text-shadow:0 1px 8px rgba(0,0,0,.8); }
+#payloadsSection, #exploit-status-panel { background:rgba(3,12,28,.72) !important; border:1px solid rgba(34,197,94,.35); border-radius:14px; box-shadow:0 0 22px rgba(5,80,30,.18); }
+@media (max-width:600px) { .hc-brand-header { margin-top:92px; margin-bottom:14px; } .hc-brand-logo { width:88px; } .hc-brand-tagline { font-size:10px; letter-spacing:.8px; } }
+
+
+
+
+
+
+/* Hunter Center V19 inherited layout: polished start button, clear first-screen boundary and clean navigation */
+html, body { min-height:100%; }
+.mainContainer {
+  height:100vh !important;
+  height:100svh !important;
+  overflow-y:auto !important;
+  overflow-x:hidden !important;
+  scroll-behavior:smooth;
+  scroll-snap-type:y mandatory;
+}
+#initial-screen {
+  position:relative !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:flex-start !important;
+  width:100% !important;
+  height:auto !important;
+  min-height:100vh !important;
+  min-height:100svh !important;
+  padding:112px 22px 26px !important;
+  gap:0 !important;
+  box-sizing:border-box !important;
+  border-bottom:2px solid rgba(34,197,94,.65) !important;
+  scroll-snap-align:start;
+  scroll-snap-stop:always;
+}
+#initial-screen header {
+  position:absolute !important;
+  top:16px !important;
+  right:20px !important;
+  left:auto !important;
+  width:auto !important;
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:flex-end !important;
+  gap:8px !important;
+  z-index:30 !important;
+}
+#initial-screen header .hc-header-icons {
+  display:flex !important;
+  flex-direction:row !important;
+  align-items:center !important;
+  justify-content:flex-end !important;
+  gap:9px !important;
+}
+#initial-screen header .hc-header-icons button {
+  width:42px !important; height:42px !important; min-width:42px !important; min-height:42px !important;
+  margin:0 !important; padding:9px !important; display:inline-flex !important;
+  align-items:center !important; justify-content:center !important;
+  border:1px solid rgba(34,197,94,.62) !important; border-radius:11px !important;
+  background:rgba(3,15,35,.92) !important;
+}
+#initial-screen header #updateCache {
+  margin:0 !important; align-self:flex-end !important; white-space:nowrap !important;
+  padding:7px 11px !important;
+}
+.hc-brand-header { margin:0 auto 20px !important; padding:0 12px !important; }
+#pslogo {
+  display:flex !important; align-items:center !important; justify-content:center !important;
+  width:190px !important; height:190px !important; min-width:190px !important; min-height:190px !important;
+  margin:0 auto !important; padding:0 !important; border:0 !important; outline:0 !important;
+  border-radius:50% !important; background:transparent !important; box-shadow:none !important;
+  -webkit-tap-highlight-color:transparent;
+}
+#pslogo:focus, #pslogo:focus-visible { outline:none !important; box-shadow:none !important; }
+#ps-logo-container {
+  display:flex !important; align-items:center !important; justify-content:center !important;
+  width:176px !important; height:176px !important; padding:0 !important; margin:0 !important;
+  border:1px solid rgba(34,197,94,.55) !important; border-radius:50% !important;
+  background:radial-gradient(circle at 35% 28%,rgba(20,83,45,.25),rgba(3,12,28,.88) 68%) !important;
+  box-shadow:0 0 22px rgba(34,197,94,.22), inset 0 0 22px rgba(34,197,94,.12) !important;
+  overflow:hidden !important;
+}
+#ps-logo-container:hover {
+  border-color:rgba(74,222,128,.9) !important;
+  box-shadow:0 0 30px rgba(34,197,94,.48), inset 0 0 24px rgba(34,197,94,.18) !important;
+  transform:scale(1.035);
+}
+#ps-logo { width:112px !important; height:112px !important; margin:0 !important; filter:drop-shadow(0 0 9px rgba(34,197,94,.55)); }
+#click-to-start-text {
+  display:block !important; text-align:center !important; margin:12px auto 0 !important;
+  color:#fff !important; font-size:18px !important; font-weight:800 !important; line-height:1.55 !important;
+  text-shadow:0 0 10px rgba(34,197,94,.55) !important;
+}
+#click-to-start-text::after {
+  content:"اضغط للبدء"; display:block; margin-top:1px; color:#86efac;
+  font-family:Arial,sans-serif; font-size:16px; font-weight:700; direction:rtl;
+}
+#stopAutoJb { margin:10px auto 0 !important; }
+#PS4FW { margin:8px auto 12px !important; text-align:center !important; }
+.secondHostBtn { margin:0 auto 14px !important; }
+#choosejb-initial {
+  position:relative !important; display:block !important; flex:0 0 auto !important;
+  width:min(92vw,720px) !important; margin:8px auto 0 !important; padding:20px 20px 22px !important;
+  box-sizing:border-box !important; border:1px solid rgba(34,197,94,.55) !important;
+  border-radius:16px !important; background:rgba(3,12,28,.86) !important;
+  box-shadow:0 0 24px rgba(22,101,52,.22) !important;
+}
+#choosejb-initial #choose-exploit-title {
+  display:block !important; color:#fff !important; text-align:center !important;
+  margin:0 0 4px !important; font-size:clamp(21px,3vw,28px) !important;
+}
+#choosejb-initial .hr-arabic-subtitle {
+  display:block !important; color:#86efac !important; font-family:Arial,sans-serif !important;
+  font-size:17px !important; font-weight:700 !important; text-align:center !important;
+  direction:rtl !important; margin:0 0 16px !important;
+}
+#choosejb-initial > div {
+  display:flex !important; flex-direction:row !important; align-items:center !important;
+  justify-content:center !important; flex-wrap:wrap !important; gap:12px !important;
+}
+#choosejb-initial label {
+  display:inline-flex !important; flex-direction:row !important; align-items:center !important;
+  justify-content:center !important; gap:9px !important; min-width:150px !important;
+  min-height:50px !important; margin:0 !important; padding:9px 14px !important;
+  box-sizing:border-box !important;
+}
+/* Keep nexHEN hidden in both selectors while leaving the original runtime code intact. */
+#nexHEN-label-initial, #nexHEN-label-exploit { display:none !important; }
+/* Triangle is a real final row of screen one, never an absolutely positioned overlay. */
+#scrollDown {
+  position:static !important; display:flex !important; align-items:center !important; justify-content:center !important;
+  width:48px !important; height:42px !important; margin:14px auto 0 !important; padding:5px !important;
+  border:1px solid rgba(34,197,94,.65) !important; border-radius:12px !important;
+  background:rgba(3,15,35,.92) !important; color:#fff !important; cursor:pointer !important;
+  flex:0 0 auto !important;
+}
+#scrollDown svg { width:26px !important; height:26px !important; margin:0 !important; stroke:currentColor; stroke-width:26; fill:none; }
+#exploit-main-screen {
+  display:block !important; width:100% !important; min-height:100vh !important; min-height:100svh !important;
+  height:auto !important; box-sizing:border-box !important; padding:28px 22px !important;
+  border-top:0 !important; scroll-snap-align:start; scroll-snap-stop:always;
+}
+#exploitContainer { width:100% !important; max-width:1400px !important; margin:0 auto !important; gap:22px !important; }
+@media (max-width:600px) {
+  #initial-screen { padding:104px 13px 22px !important; }
+  #initial-screen header { top:9px !important; right:10px !important; }
+  #initial-screen header .hc-header-icons { gap:7px !important; }
+  #initial-screen header .hc-header-icons button { width:38px !important; height:38px !important; min-width:38px !important; min-height:38px !important; }
+  #initial-screen header #updateCache { font-size:12px !important; padding:6px 9px !important; }
+  .hc-brand-header { margin-bottom:14px !important; }
+  .hc-brand-logo { width:84px !important; }
+  #pslogo { width:156px !important; height:156px !important; min-width:156px !important; min-height:156px !important; }
+  #ps-logo-container { width:146px !important; height:146px !important; }
+  #ps-logo { width:94px !important; height:94px !important; }
+  #choosejb-initial { width:96vw !important; padding:17px 11px 18px !important; }
+  #choosejb-initial label { min-width:128px !important; }
+  #exploit-main-screen { padding:18px 10px !important; }
+}
+
+
+/* Hunter Center V19 compact screen: compact first screen for PS4 browser; keep screen one fully visible. */
+#initial-screen {
+  height:100vh !important;
+  height:100svh !important;
+  min-height:0 !important;
+  max-height:100vh !important;
+  max-height:100svh !important;
+  overflow:hidden !important;
+  justify-content:space-evenly !important;
+  padding:clamp(62px, 8vh, 88px) 16px 10px !important;
+  gap:0 !important;
+}
+.hc-brand-header {
+  flex:0 0 auto !important;
+  margin:0 auto clamp(5px, 1vh, 10px) !important;
+  padding:0 8px !important;
+}
+.hc-brand-logo {
+  width:clamp(54px, 8vh, 82px) !important;
+  max-height:clamp(48px, 8vh, 76px) !important;
+  margin:0 auto 3px !important;
+}
+.hc-brand-name { font-size:clamp(19px, 2.8vh, 29px) !important; line-height:1.05 !important; }
+.hc-brand-tagline { margin-top:2px !important; font-size:clamp(8px, 1.15vh, 11px) !important; }
+#pslogo {
+  flex:0 0 auto !important;
+  width:clamp(104px, 15vh, 148px) !important;
+  height:clamp(104px, 15vh, 148px) !important;
+  min-width:clamp(104px, 15vh, 148px) !important;
+  min-height:clamp(104px, 15vh, 148px) !important;
+  margin:0 auto !important;
+}
+#ps-logo-container {
+  width:clamp(96px, 14vh, 136px) !important;
+  height:clamp(96px, 14vh, 136px) !important;
+}
+#ps-logo { width:clamp(62px, 9vh, 90px) !important; height:clamp(62px, 9vh, 90px) !important; }
+#click-to-start-text {
+  flex:0 0 auto !important;
+  margin:clamp(2px, .5vh, 6px) auto 0 !important;
+  font-size:clamp(14px, 1.8vh, 18px) !important;
+  line-height:1.25 !important;
+}
+#click-to-start-text::after { font-size:clamp(12px, 1.55vh, 16px) !important; margin-top:0 !important; }
+#stopAutoJb { margin:3px auto 0 !important; padding:5px 9px !important; }
+#PS4FW { flex:0 0 auto !important; margin:2px auto 3px !important; font-size:clamp(11px, 1.45vh, 15px) !important; line-height:1.2 !important; }
+.secondHostBtn { margin:2px auto 4px !important; }
+#choosejb-initial {
+  flex:0 0 auto !important;
+  width:min(92vw, 680px) !important;
+  margin:clamp(3px, .7vh, 8px) auto 0 !important;
+  padding:clamp(9px, 1.5vh, 15px) 14px !important;
+}
+#choosejb-initial #choose-exploit-title {
+  font-size:clamp(18px, 2.5vh, 25px) !important;
+  line-height:1.15 !important;
+  margin:0 0 2px !important;
+}
+#choosejb-initial .hr-arabic-subtitle {
+  font-size:clamp(13px, 1.65vh, 16px) !important;
+  line-height:1.2 !important;
+  margin:0 0 clamp(6px, 1vh, 10px) !important;
+}
+#choosejb-initial > div { gap:8px !important; }
+#choosejb-initial label {
+  min-width:clamp(122px, 17vw, 150px) !important;
+  min-height:clamp(38px, 5.3vh, 48px) !important;
+  padding:6px 11px !important;
+  margin:0 !important;
+}
+#choosejb-initial label span { font-size:clamp(14px, 1.8vh, 17px) !important; }
+/* Remove nexHEN from both visible selectors; keep IDs for compatibility with legacy scripts. */
+#nexHEN-label-initial, #nexHEN-label-exploit { display:none !important; visibility:hidden !important; }
+#scrollDown {
+  position:static !important;
+  flex:0 0 auto !important;
+  width:38px !important;
+  height:32px !important;
+  min-height:32px !important;
+  margin:clamp(4px, .8vh, 8px) auto 0 !important;
+  padding:2px !important;
+  border-radius:9px !important;
+}
+#scrollDown svg { width:22px !important; height:22px !important; }
+@media (max-height:700px) {
+  #initial-screen { padding-top:58px !important; padding-bottom:6px !important; }
+  .hc-brand-header { margin-bottom:3px !important; }
+  .hc-brand-logo { width:48px !important; max-height:46px !important; }
+  #pslogo { width:92px !important; height:92px !important; min-width:92px !important; min-height:92px !important; }
+  #ps-logo-container { width:86px !important; height:86px !important; }
+  #ps-logo { width:56px !important; height:56px !important; }
+  #choosejb-initial { padding:7px 10px !important; }
+  #choosejb-initial .hr-arabic-subtitle { margin-bottom:4px !important; }
+  #scrollDown { height:28px !important; min-height:28px !important; margin-top:3px !important; }
+}
+
+
+/* Hunter Center selector alignment: balanced two-option selector; no visual gap for the removed option. */
+#choosejb-initial > div {
+  width:100% !important;
+  max-width:100% !important;
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  align-items:center !important;
+  justify-content:center !important;
+  direction:ltr !important;
+  gap:16px !important;
+  margin-left:auto !important;
+  margin-right:auto !important;
+}
+#choosejb-initial > div > label#goldhen-label-initial,
+#choosejb-initial > div > label#PS4HEN-label-initial {
+  flex:0 1 176px !important;
+  width:176px !important;
+  min-width:160px !important;
+  max-width:176px !important;
+  min-height:56px !important;
+  padding:10px 18px !important;
+  display:inline-flex !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:12px !important;
+  box-sizing:border-box !important;
+}
+#choosejb-initial > div > label#goldhen-label-initial span,
+#choosejb-initial > div > label#PS4HEN-label-initial span {
+  font-size:18px !important;
+  line-height:1.2 !important;
+  white-space:nowrap !important;
+}
+#choosejb-initial > div > label#goldhen-label-initial input,
+#choosejb-initial > div > label#PS4HEN-label-initial input {
+  flex:0 0 auto !important;
+  width:19px !important;
+  height:19px !important;
+  margin:0 !important;
+}
+#nexHEN-label-initial,
+#nexHEN-label-exploit { display:none !important; }
+@media (max-width:600px) {
+  #choosejb-initial > div { gap:10px !important; }
+  #choosejb-initial > div > label#goldhen-label-initial,
+  #choosejb-initial > div > label#PS4HEN-label-initial {
+    flex:1 1 0 !important;
+    width:auto !important;
+    min-width:0 !important;
+    max-width:176px !important;
+    min-height:52px !important;
+    padding:8px 10px !important;
+  }
+  #choosejb-initial > div > label#goldhen-label-initial span,
+  #choosejb-initial > div > label#PS4HEN-label-initial span { font-size:16px !important; }
+}
+
+
+/* Hunter Center selector width: use the full selector panel width for the two remaining choices. */
+#choosejb-initial > div {
+  display:flex !important;
+  flex-direction:row !important;
+  flex-wrap:nowrap !important;
+  align-items:stretch !important;
+  justify-content:center !important;
+  width:100% !important;
+  max-width:100% !important;
+  gap:14px !important;
+  margin:0 auto !important;
+  box-sizing:border-box !important;
+}
+#choosejb-initial > div > #goldhen-label-initial,
+#choosejb-initial > div > #PS4HEN-label-initial {
+  display:flex !important;
+  flex:1 1 0 !important;
+  width:calc(50% - 7px) !important;
+  min-width:0 !important;
+  max-width:none !important;
+  min-height:58px !important;
+  margin:0 !important;
+  padding:12px 18px !important;
+  box-sizing:border-box !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:14px !important;
+}
+#choosejb-initial > div > #goldhen-label-initial span,
+#choosejb-initial > div > #PS4HEN-label-initial span {
+  font-size:clamp(17px, 2.2vh, 21px) !important;
+  line-height:1.2 !important;
+  white-space:nowrap !important;
+}
+#choosejb-initial > div > #goldhen-label-initial input,
+#choosejb-initial > div > #PS4HEN-label-initial input {
+  width:20px !important;
+  height:20px !important;
+  flex:0 0 20px !important;
+  margin:0 !important;
+}
+@media (max-width:600px) {
+  #choosejb-initial > div { gap:10px !important; }
+  #choosejb-initial > div > #goldhen-label-initial,
+  #choosejb-initial > div > #PS4HEN-label-initial {
+    width:calc(50% - 5px) !important;
+    min-height:54px !important;
+    padding:10px 8px !important;
+    gap:8px !important;
+  }
+  #choosejb-initial > div > #goldhen-label-initial span,
+  #choosejb-initial > div > #PS4HEN-label-initial span { font-size:16px !important; }
+}
+
+
+/* Hunter Center selector grid: two equal full-width columns across the entire selector card. */
+#choosejb-initial > div.flex {
+  display:grid !important;
+  grid-template-columns:repeat(2,minmax(0,1fr)) !important;
+  align-items:stretch !important;
+  justify-content:stretch !important;
+  gap:12px !important;
+  width:100% !important;
+  max-width:none !important;
+  margin:0 !important;
+  padding:0 !important;
+  box-sizing:border-box !important;
+}
+#choosejb-initial > div.flex > label#goldhen-label-initial,
+#choosejb-initial > div.flex > label#PS4HEN-label-initial {
+  display:flex !important;
+  width:100% !important;
+  min-width:0 !important;
+  max-width:none !important;
+  height:68px !important;
+  min-height:68px !important;
+  margin:0 !important;
+  padding:12px 18px !important;
+  box-sizing:border-box !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:14px !important;
+  flex:none !important;
+}
+#choosejb-initial > div.flex > label#goldhen-label-initial span,
+#choosejb-initial > div.flex > label#PS4HEN-label-initial span {
+  font-size:20px !important;
+  line-height:1.2 !important;
+  white-space:nowrap !important;
+}
+#choosejb-initial > div.flex > label#goldhen-label-initial input,
+#choosejb-initial > div.flex > label#PS4HEN-label-initial input {
+  flex:0 0 20px !important;
+  width:20px !important;
+  height:20px !important;
+  margin:0 !important;
+}
+
+
+/* Hunter Center: simple spinning status indicator replaces the PS Start button. */
+#hr-start-indicator {
+  display:flex !important;
+  flex-direction:column !important;
+  align-items:center !important;
+  justify-content:center !important;
+  gap:10px !important;
+  width:min(88vw,360px) !important;
+  min-height:150px !important;
+  margin:16px auto 20px !important;
+  padding:18px 20px !important;
+  box-sizing:border-box !important;
+  border:1px solid rgba(34,197,94,.42) !important;
+  border-radius:16px !important;
+  background:rgba(2,10,25,.78) !important;
+  box-shadow:0 0 22px rgba(22,101,52,.18) !important;
+  text-align:center !important;
+}
+#hr-start-indicator-spinner {
+  display:block !important;
+  width:54px !important;
+  height:54px !important;
+  box-sizing:border-box !important;
+  border:5px solid rgba(74,222,128,.20) !important;
+  border-top-color:#4ade80 !important;
+  border-right-color:#16a34a !important;
+  border-radius:50% !important;
+  box-shadow:0 0 14px rgba(34,197,94,.30) !important;
+  animation:hunterCenterStartSpin .85s linear infinite !important;
+}
+@keyframes hunterCenterStartSpin {
+  from { transform:rotate(0deg); }
+  to { transform:rotate(360deg); }
+}
+#hr-start-indicator-main {
+  color:#f0fff4 !important;
+  font-family:Arial,sans-serif !important;
+  font-size:20px !important;
+  font-weight:900 !important;
+  letter-spacing:1.2px !important;
+  text-align:center !important;
+}
+#hr-start-indicator-arabic {
+  color:#bbf7d0 !important;
+  font-family:Arial,sans-serif !important;
+  font-size:15px !important;
+  font-weight:700 !important;
+  text-align:center !important;
+}
+#hr-start-indicator.hr-start-indicator-done {
+  border-color:rgba(51,210,137,.60) !important;
+  box-shadow:0 0 22px rgba(30,190,115,.18) !important;
+}
+#hr-start-indicator.hr-start-indicator-done #hr-start-indicator-main {
+  color:#4ade80 !important;
+  font-size:26px !important;
+}
+#hr-start-indicator.hr-start-indicator-done #hr-start-indicator-arabic {
+  color:#bbf7d0 !important;
+}
+@media (max-height:700px) {
+  #hr-start-indicator { min-height:122px !important; padding:12px 16px !important; gap:7px !important; }
+  #hr-start-indicator-spinner { width:44px !important; height:44px !important; border-width:4px !important; }
+}
+
+
+/* Hunter Center Libya visual identity: emerald green and black. */
+html, body { background-color:#020b05 !important; }
+body {
+  background-image:linear-gradient(rgba(0,8,2,.76),rgba(0,7,2,.82)),url('../assets/huntercenter/huntercenter-wallpaper.jpg') !important;
+  background-position:center center !important;
+  background-size:cover !important;
+  background-attachment:fixed !important;
+}
+.hc-brand-header {
+  width:100% !important; max-width:900px !important;
+  display:flex !important; flex-direction:column !important;
+  align-items:center !important; justify-content:center !important;
+  text-align:center !important; margin:0 auto 10px !important;
+  padding:0 10px !important; box-sizing:border-box !important;
+}
+.hc-brand-logo {
+  display:block !important; width:clamp(120px,18vh,180px) !important;
+  height:auto !important; max-height:72px !important; object-fit:contain !important;
+  margin:0 auto 4px !important;
+  filter:drop-shadow(0 0 12px rgba(34,197,94,.55)) !important;
+}
+.hc-brand-name {
+  color:#f4fff7 !important; font-family:Arial,sans-serif !important;
+  font-size:clamp(21px,3.4vw,34px) !important; font-weight:900 !important;
+  letter-spacing:2px !important; text-shadow:0 0 12px rgba(34,197,94,.60) !important;
+}
+.hc-brand-name span { color:#22c55e !important; }
+.hc-brand-tagline {
+  margin-top:3px !important; color:#bbf7d0 !important;
+  font-family:Arial,sans-serif !important; font-size:11px !important;
+  font-weight:bold !important; letter-spacing:1.2px !important;
+}
+button, select, input { accent-color:#22c55e !important; }
+button { border-color:rgba(34,197,94,.55) !important; }
+button:not(:disabled):hover { box-shadow:0 0 12px rgba(34,197,94,.38) !important; }
+.bg-blue-600, .bg-green-600 { background-color:#15803d !important; }
+.hover\:bg-blue-700:hover, .hover\:bg-green-700:hover { background-color:#166534 !important; }
+.text-blue-500 { color:#4ade80 !important; }
+.border-blue-500 { border-color:#22c55e !important; }
+.accent-blue-500 { accent-color:#22c55e !important; }
+.focus-within\:border-blue-500:focus-within { border-color:#22c55e !important; }
+.focus\:ring-blue-400:focus { box-shadow:0 0 0 2px #4ade80 !important; }
+#ps-logo { fill:#22c55e !important; }
+#choosejb-initial, #payloadsSection, #exploit-status-panel {
+  border-color:rgba(34,197,94,.44) !important;
+  box-shadow:0 0 22px rgba(22,101,52,.22) !important;
+}
+#hr-start-indicator {
+  border-color:rgba(34,197,94,.55) !important;
+  box-shadow:0 0 22px rgba(22,101,52,.25) !important;
+}
+#hr-start-indicator-spinner {
+  border-color:rgba(74,222,128,.20) !important;
+  border-top-color:#4ade80 !important;
+  border-right-color:#16a34a !important;
+  box-shadow:0 0 14px rgba(34,197,94,.32) !important;
+}
+#hr-start-indicator-main { color:#f0fff4 !important; }
+#hr-start-indicator-arabic { color:#bbf7d0 !important; }
+#hr-start-indicator.hr-start-indicator-done { border-color:rgba(51,210,137,.65) !important; }
+@media (max-width:600px) {
+  .hc-brand-header { margin-bottom:7px !important; }
+  .hc-brand-logo { width:clamp(112px,16vh,150px) !important; max-height:58px !important; }
+  .hc-brand-tagline { font-size:9px !important; letter-spacing:.7px !important; }
+}
